@@ -1,0 +1,86 @@
+{
+  "driveLink": "https://drive.google.com/drive/folders/1GqFnxE5sJfJ5nrV_t8Um5O9llEcrZeho?usp=sharing",
+  "items": [
+    {
+      "id": 1,
+      "title": "Promo Reel",
+      "category": "Video Editing",
+      "thumbnail": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&q=80",
+      "videoUrl": "https://drive.google.com/file/d/1uWbwtqKi3gn-REb9DwQG9aWZPxySFLiA/view",
+      "type": "video",
+      "height": "280px"
+    },
+    {
+      "id": 2,
+      "title": "Brand Identity",
+      "category": "Graphic Design",
+      "thumbnail": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "165px"
+    },
+    {
+      "id": 3,
+      "title": "UI Animation",
+      "category": "UX Design",
+      "thumbnail": "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "200px"
+    },
+    {
+      "id": 4,
+      "title": "Curriculum Video",
+      "category": "Edtech",
+      "thumbnail": "https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "280px"
+    },
+    {
+      "id": 5,
+      "title": "Visual Narrative",
+      "category": "Cinematography",
+      "thumbnail": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "165px"
+    },
+    {
+      "id": 6,
+      "title": "Motion Reel 01",
+      "category": "Motion Graphics",
+      "thumbnail": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "200px"
+    },
+    {
+      "id": 7,
+      "title": "After Effects",
+      "category": "Motion Graphics",
+      "thumbnail": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "280px"
+    },
+    {
+      "id": 8,
+      "title": "Typography Art",
+      "category": "Graphic Design",
+      "thumbnail": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "200px"
+    },
+    {
+      "id": 9,
+      "title": "3D Composition",
+      "category": "Cinema 4D",
+      "thumbnail": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&q=80",
+      "videoUrl": null,
+      "type": "image",
+      "height": "165px"
+    }
+  ]
+}

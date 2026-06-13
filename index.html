@@ -64,7 +64,7 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 .ld-name{margin-top:22px;font-size:10px;letter-spacing:.3em;color:#374151;opacity:0;animation:fadeIn .5s ease .75s forwards}
 
 /* ═══════════════════════════════════════════════════════════════════
-   APP SHELL  — side-by-side, full viewport
+   APP SHELL
 ═══════════════════════════════════════════════════════════════════ */
 #app{
   width:100vw;height:100vh;
@@ -82,23 +82,12 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   LEFT PANEL  — wireframe layout
-   ┌──────────────────────┐
-   │  Name block (top)    │
-   │  ──────────────────  │
-   │  Nav buttons (mid)   │
-   │  [full-width pills]  │
-   │                      │
-   │  ── (spacer) ──      │
-   │  Download Resume     │
-   │  LinkedIn            │
-   └──────────────────────┘
+   LEFT PANEL
 ═══════════════════════════════════════════════════════════════════ */
 #panel{
   width:330px;min-width:330px;height:100vh;
   display:flex;flex-direction:column;
   position:relative;z-index:10;
-  /* blue-tinted panel matching wireframe */
   background:rgba(6,6,12,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-right:1px solid rgba(255,255,255,.05);
 }
@@ -160,7 +149,6 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
   background:#818cf8;
   box-shadow:0 0 6px rgba(99,102,241,.9);
 }
-/* active pip on right */
 .nb.on::after{
   content:'';margin-left:auto;width:5px;height:5px;border-radius:50%;
   background:#818cf8;box-shadow:0 0 7px rgba(99,102,241,.9);flex-shrink:0;
@@ -200,15 +188,7 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 #btn-li:active{transform:scale(.97)}
 
 /* ═══════════════════════════════════════════════════════════════════
-   MOBILE LAYOUT  — wireframe:
-   ┌────────────────────────────────────────────────┐
-   │ Name block (top-left card) │ tab tab tab tab   │
-   ├────────────────────────────────────────────────┤
-   │ Content area (full width below)                │
-   │                                                │
-   │ [Download Resume]                              │
-   │ [LinkedIn]                                     │
-   └────────────────────────────────────────────────┘
+   MOBILE LAYOUT
 ═══════════════════════════════════════════════════════════════════ */
 #mnav{
   display:none;
@@ -216,10 +196,8 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
   background:rgba(6,6,12,.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-bottom:1px solid rgba(99,102,241,.2);
 }
-/* name card on top, tabs row below */
 #mnav-top{display:flex;flex-direction:column}
 
-/* mobile name card */
 #m-brand{
   flex-shrink:0;width:100%;
   padding:14px 16px;
@@ -238,7 +216,6 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 #m-name span{color:#818cf8}
 #m-sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.4}
 
-/* mobile tab strip */
 #mtabs{
   flex:1;
   display:flex;align-items:center;gap:0;
@@ -266,10 +243,8 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
   color:#fff;
   border-bottom:2px solid #818cf8;
 }
-.mt.on.first-tab{border-left:none}
 .mt-pad{flex-shrink:0;width:0}
 
-/* mobile bottom actions — fixed bottom bar */
 #m-foot{
   display:none;
   padding:10px 16px;
@@ -393,22 +368,6 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 .edu-inst{font-size:12px;color:rgba(165,180,252,.7);margin-top:3px}
 .edu-yr{font-size:11px;color:#4b5563;margin-top:4px}
 
-/* Contact */
-.clabel{display:block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#4b5563;margin-bottom:7px}
-.cinput{width:100%;padding:12px 16px;border-radius:12px;font-size:14px;color:#e5e7eb;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);outline:none;margin-bottom:18px;transition:border-color .3s}
-.cinput:focus{border-color:rgba(99,102,241,.5)}
-textarea.cinput{resize:none}
-#btn-send{width:100%;padding:14px;border-radius:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);transition:box-shadow .3s,transform .15s}
-#btn-send:hover{box-shadow:0 0 28px rgba(99,102,241,.44);transform:scale(1.015)}
-#btn-send:active{transform:scale(.97)}
-#thanks{padding:36px;border-radius:16px;border:1px solid rgba(99,102,241,.25);text-align:center;background:rgba(99,102,241,.06);animation:fadeUp .4s ease both}
-#thanks .ti{font-size:22px;color:#a5b4fc;margin-bottom:12px}
-#thanks p{font-size:14px;color:#9ca3af;margin-top:5px}
-.cfoot{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
-.cfoot a,.cfoot span{font-size:11px;color:#4b5563;display:flex;align-items:center;gap:5px;transition:color .2s}
-.cfoot a:hover{color:#a5b4fc}
-.csep{color:#374151!important}
-
 /* ═══════════════════════════════════════════════════════════════════
    LIGHTBOX
 ═══════════════════════════════════════════════════════════════════ */
@@ -442,8 +401,6 @@ textarea.cinput{resize:none}
   #lb{padding:8px}
   #lb-media-wrap img{max-height:55vh}
   #lb-media-wrap iframe,#lb-media-wrap video{height:55vh}
-  .cfoot{flex-direction:column;align-items:flex-start;gap:8px}
-  .csep{display:none}
   .wi,.wi-lg{max-width:100%}
 }
 @media(min-width:768px) and (max-width:1023px){
@@ -476,13 +433,11 @@ textarea.cinput{resize:none}
 
   <!-- ── DESKTOP LEFT PANEL ── -->
   <aside id="panel">
-    <!-- Name block — clicking returns to hero -->
     <div id="panel-brand" onclick="navigate('hero')" title="Home">
       <div id="panel-name">Venugopal<span>.</span></div>
       <div id="panel-sub">Lead Motion Designer<br>Multimedia &amp; Creative Lead</div>
     </div>
 
-    <!-- Nav buttons -->
     <nav id="panel-nav">
       <button class="nb" data-sec="about">About me</button>
       <button class="nb" data-sec="experience">Experience</button>
@@ -491,7 +446,6 @@ textarea.cinput{resize:none}
       <button class="nb" data-sec="education">Education</button>
     </nav>
 
-    <!-- Bottom actions -->
     <div id="panel-foot">
       <button class="pf-btn" id="btn-resume">
         <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M5 7l3 3 3-3M2 12h12"/></svg>
@@ -508,12 +462,10 @@ textarea.cinput{resize:none}
   <!-- ── MOBILE TOP NAV ── -->
   <nav id="mnav">
     <div id="mnav-top">
-      <!-- Name card (top-left) -->
       <div id="m-brand" onclick="navigate('hero')" title="Home">
         <div id="m-name">Venugopal<span>.</span></div>
         <div id="m-sub">Lead Motion Designer<br>Multimedia &amp; Creative Lead</div>
       </div>
-      <!-- Horizontal tabs -->
       <div id="mtabs">
         <button class="mt" data-sec="about">About me</button>
         <button class="mt" data-sec="experience">Experience</button>
@@ -527,7 +479,6 @@ textarea.cinput{resize:none}
   <!-- ── MAIN CONTENT ── -->
   <main id="main">
     <div id="cw"></div>
-    <!-- Mobile bottom actions — shown below content -->
     <div id="m-foot">
       <button class="pf-btn" id="m-btn-resume">
         <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v8M5 7l3 3 3-3M2 12h12"/></svg>
@@ -557,7 +508,10 @@ textarea.cinput{resize:none}
   </div>
 </div>
 
-<!-- ══════════ JAVASCRIPT ══════════ -->
+<!-- Portfolio logic (must load before main script) -->
+<script src="assets/js/portfolio.js"></script>
+
+<!-- ══════════ MAIN SCRIPT ══════════ -->
 <script>
 'use strict';
 
@@ -574,45 +528,12 @@ const SKILLS = [
   { cat:'Software', items:['Adobe After Effects','Adobe Premiere Pro','Adobe Photoshop','Adobe Illustrator','Cinema 4D','Figma','G-Suite'] },
   { cat:'Creative',  items:['Motion Graphics','Video Editing','Graphic Design','UX Animation / Design','Cinematography'] }
 ];
-const PORTFOLIO_LINK = 'https://drive.google.com/drive/folders/1GqFnxE5sJfJ5nrV_t8Um5O9llEcrZeho?usp=sharing';
-const TILES = [
-  { id:1, type:'video', label:'Promo Reel',       tag:'Video Editing',  h:'280px',
-    thumb:'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&q=80',
-    src:'https://drive.google.com/file/d/1uWbwtqKi3gn-REb9DwQG9aWZPxySFLiA/preview', drive:true },
-  { id:2, type:'image', label:'Brand Identity',   tag:'Graphic Design', h:'165px',
-    thumb:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1400&q=95' },
-  { id:3, type:'image', label:'UI Animation',     tag:'UX Design',      h:'200px',
-    thumb:'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1400&q=95' },
-  { id:4, type:'image', label:'Curriculum Video', tag:'Edtech',         h:'280px',
-    thumb:'https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1536240478700-b869ad10e2ab?w=1400&q=95' },
-  { id:5, type:'image', label:'Visual Narrative', tag:'Cinematography', h:'165px',
-    thumb:'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1400&q=95' },
-  { id:6, type:'image', label:'Motion Reel 01',   tag:'Motion Graphics',h:'200px',
-    thumb:'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?w=1400&q=95' },
-  { id:7, type:'image', label:'After Effects',    tag:'Motion Graphics',h:'280px',
-    thumb:'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1400&q=95' },
-  { id:8, type:'image', label:'Typography Art',   tag:'Graphic Design', h:'200px',
-    thumb:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&q=95' },
-  { id:9, type:'image', label:'3D Composition',   tag:'Cinema 4D',      h:'165px',
-    thumb:'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&q=80',
-    src:'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1400&q=95' }
-];
 
 /* ── HELPERS ── */
 const $  = id => document.getElementById(id);
 const isMobile = () => window.innerWidth < 768;
 const SVG_EXT  = `<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>`;
-const SVG_EXP  = `<svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="white" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>`;
-const SVG_PLAY = `<svg viewBox="0 0 24 24" width="18" height="18" fill="white" style="margin-left:3px"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
 const SVG_EDU  = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="rgba(165,180,252,0.8)" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`;
-const SVG_MAIL = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`;
 
 /* ── PARTICLES ── */
 function spawnParticles(container) {
@@ -712,29 +633,20 @@ function buildSkills() {
 
 function buildPortfolio() {
   setScroll();
-  const tiles = TILES.map((t,i) => `
-    <div class="tile stag" style="height:${t.h};animation-delay:${.04*i}s" data-id="${t.id}">
-      <img src="${t.thumb}" alt="${t.label}" loading="lazy"/>
-      <div class="tg"></div><div class="tt"></div>
-      ${t.type==='video'?`<div class="tplay"><div class="play-btn">${SVG_PLAY}</div></div>`:''}
-      <div class="texp">${SVG_EXP}</div>
-      <div class="tlbl"><span class="tlbl-tag">${t.tag}</span><span class="tlbl-name">${t.label}</span></div>
-    </div>`).join('');
   $('cw').innerHTML = `
     <div class="pg"><div class="wi-lg">
       <p class="sec-tag stag" style="animation-delay:.00s">Portfolio</p>
       <h2 class="sec-h2 stag" style="animation-delay:.07s">Creative Work</h2>
       <p class="stag" style="font-size:14px;color:#6b7280;margin-bottom:28px;animation-delay:.11s">Tap any tile to expand — images open fullscreen, videos play inline.</p>
-      <div class="masonry stag" style="animation-delay:.15s">${tiles}</div>
+      <div id="portfolio-tiles-root"></div>
       <div class="dl-wrap stag" style="animation-delay:.2s">
-        <a class="dl-btn" href="${PORTFOLIO_LINK}" target="_blank" rel="noopener noreferrer">${SVG_EXT} View Full Drive</a>
+        <a class="dl-btn" id="portfolio-drive-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none">${SVG_EXT} View Full Drive</a>
       </div>
     </div></div>`;
-  document.querySelectorAll('.tile').forEach(el =>
-    el.addEventListener('click', () => {
-      const t = TILES.find(x => x.id === +el.dataset.id);
-      if (t) openLightbox(t);
-    })
+
+  Portfolio.build(
+    $('portfolio-tiles-root'),
+    $('portfolio-drive-link')
   );
 }
 
@@ -764,13 +676,9 @@ let current = 'hero';
 
 function navigate(sec) {
   current = sec;
-
-  /* desktop nav */
   document.querySelectorAll('.nb').forEach(b => b.classList.toggle('on', b.dataset.sec === sec));
-  /* mobile tabs */
   document.querySelectorAll('.mt').forEach(t => t.classList.toggle('on', t.dataset.sec === sec));
 
-  /* scroll active mobile tab into view */
   const activeTab = document.querySelector(`.mt[data-sec="${sec}"]`);
   if (activeTab) {
     const tabs = $('mtabs');
@@ -780,11 +688,10 @@ function navigate(sec) {
   BUILDERS[sec] ? BUILDERS[sec]() : buildHero();
 }
 
-/* wire all nav buttons */
 document.querySelectorAll('.nb').forEach(b => b.addEventListener('click', () => navigate(b.dataset.sec)));
 document.querySelectorAll('.mt').forEach(t => t.addEventListener('click', () => navigate(t.dataset.sec)));
 
-/* ── LIGHTBOX ── */
+/* ── LIGHTBOX (global — used by portfolio.js) ── */
 function openLightbox(tile) {
   $('lb-tag-txt').textContent  = tile.tag;
   $('lb-name-txt').textContent = tile.label;
