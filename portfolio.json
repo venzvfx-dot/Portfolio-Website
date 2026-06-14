@@ -7,101 +7,24 @@
 
     {
       "id": 1,
-      "title": "Promo Reel 2024",
-      "category": "Video Editing",
-      "thumbnail": "assets/images/thumbnails/promo-reel.jpg",
-      "videoUrl":  "assets/videos/promo-reel.mp4",
-      "type":      "video",
-      "width":     1920,
-      "height":    1080
+      "title": "CEO Townhall 2027 H1",
+      "category": "Motion Graphics",
+      "thumbnail": "assets/images/thumbnails/CEO-Townhall2027H1.png",
+      "videoUrl": "assets/videos/CEO-Townhall2027H1.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080
     },
 
     {
       "id": 2,
-      "title": "Brand Identity",
-      "category": "Graphic Design",
-      "thumbnail": "assets/images/thumbnails/brand-identity.jpg",
-      "videoUrl":  null,
-      "type":      "image",
-      "width":     1200,
-      "height":    900
-    },
-
-    {
-      "id": 3,
-      "title": "UI Animation",
-      "category": "UX Design",
-      "thumbnail": "assets/images/thumbnails/ui-animation.jpg",
-      "videoUrl":  "assets/videos/ui-animation.mp4",
-      "type":      "video",
-      "width":     1080,
-      "height":    1920
-    },
-
-    {
-      "id": 4,
-      "title": "Curriculum Video",
-      "category": "Edtech",
-      "thumbnail": "assets/images/thumbnails/curriculum-video.jpg",
-      "videoUrl":  "assets/videos/curriculum-video.mp4",
-      "type":      "video",
-      "width":     1920,
-      "height":    1080
-    },
-
-    {
-      "id": 5,
-      "title": "Visual Narrative",
-      "category": "Cinematography",
-      "thumbnail": "assets/images/thumbnails/visual-narrative.jpg",
-      "videoUrl":  "assets/videos/visual-narrative.mp4",
-      "type":      "video",
-      "width":     1080,
-      "height":    1350
-    },
-
-    {
-      "id": 6,
-      "title": "Motion Reel 01",
+      "title": "CEO Final Video 2026",
       "category": "Motion Graphics",
-      "thumbnail": "assets/images/thumbnails/motion-reel-01.jpg",
-      "videoUrl":  "assets/videos/motion-reel-01.mp4",
-      "type":      "video",
-      "width":     1920,
-      "height":    1080
-    },
-
-    {
-      "id": 7,
-      "title": "After Effects Showreel",
-      "category": "Motion Graphics",
-      "thumbnail": "assets/images/thumbnails/after-effects-showreel.jpg",
-      "videoUrl":  "assets/videos/after-effects-showreel.mp4",
-      "type":      "video",
-      "width":     1080,
-      "height":    1080
-    },
-
-    {
-      "id": 8,
-      "title": "Typography Art",
-      "category": "Graphic Design",
-      "thumbnail": "assets/images/thumbnails/typography-art.jpg",
-      "videoUrl":  null,
-      "type":      "image",
-      "width":     1200,
-      "height":    1500
-    },
-
-    {
-      "id": 9,
-      "title": "3D Composition",
-      "category": "Cinema 4D",
-      "thumbnail": "assets/images/thumbnails/3d-composition.jpg",
-      "videoUrl":  "assets/videos/3d-composition.mp4",
-      "type":      "video",
-      "width":     1920,
-      "height":    1080
+      "thumbnail": "assets/images/thumbnails/CEO-FinalVideo2026.png",
+      "videoUrl": "assets/videos/CEO-FinalVideo2026.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080
     }
 
   ]

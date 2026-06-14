@@ -135,10 +135,12 @@ const Portfolio = (() => {
       /* Set volume to 10% on every open; ignore errors (some browsers block it) */
       try { video.volume = 0.1; } catch (_) {}
 
-      /* Once dimensions are known, size the wrap to fit the viewport */
+      /* Set aspect-ratio so CSS can contain it without pixel math */
       video.addEventListener('loadedmetadata', () => {
         try { video.volume = 0.1; } catch (_) {}
-        _sizeWrap(wrap, video.videoWidth, video.videoHeight);
+        if (video.videoWidth && video.videoHeight) {
+          video.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+        }
       });
 
       /* Watermark */
@@ -154,14 +156,6 @@ const Portfolio = (() => {
       wrap.appendChild(video);
       wrap.appendChild(wm);
 
-      /* Resize wrap if window is resized while modal is open */
-      function onResize() {
-        if (video.videoWidth) _sizeWrap(wrap, video.videoWidth, video.videoHeight);
-      }
-      window.addEventListener('resize', onResize);
-      /* Clean up listener when lightbox closes */
-      video.addEventListener('emptied', () => window.removeEventListener('resize', onResize));
-
     } else {
       /* Image or video-less item — show thumbnail fullscreen */
       window.openLightbox({
@@ -173,19 +167,6 @@ const Portfolio = (() => {
     }
   }
 
-  /* Size .lbv-wrap to fit video's natural aspect ratio within the viewport */
-  function _sizeWrap(wrap, vw, vh) {
-    if (!vw || !vh) return;
-    const isMobile   = window.innerWidth < 768;
-    const maxW       = isMobile ? window.innerWidth        : window.innerWidth  * 0.90;
-    const maxH       = window.innerHeight * 0.90;
-    const ratio      = vw / vh;
-    let   w          = maxW;
-    let   h          = w / ratio;
-    if (h > maxH) { h = maxH; w = h * ratio; }
-    wrap.style.width  = w + 'px';
-    wrap.style.height = h + 'px';
-  }
 
   /* Called via onerror on the <video> element */
   function _onVideoError(videoEl) {
