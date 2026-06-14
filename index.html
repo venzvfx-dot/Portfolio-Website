@@ -220,28 +220,41 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
   flex:1;
   display:flex;align-items:center;gap:0;
   overflow-x:auto;
+  min-height:52px;
   scrollbar-width:none;-webkit-overflow-scrolling:touch;
   scroll-snap-type:x proximity;
+  padding:0 4px;
 }
 #mtabs::-webkit-scrollbar{display:none}
 .mt{
   flex-shrink:0;
-  height:100%;min-width:80px;
-  padding:0 14px;
-  font-size:12px;font-weight:500;
+  height:36px;
+  padding:0 16px;
+  margin:0 3px;
+  font-size:12px;font-weight:400;
   color:rgba(255,255,255,.5);
-  border-right:1px solid rgba(255,255,255,.05);
   white-space:nowrap;
   scroll-snap-align:start;
-  transition:background .2s,color .2s;
-  display:flex;align-items:center;justify-content:center;
-  text-align:center;
+  border:1px solid transparent;
+  border-radius:10px;
+  transition:background .3s,color .3s,border-color .3s,box-shadow .3s;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  text-align:center;letter-spacing:.01em;
 }
-.mt:last-child{border-right:none}
+.mt::before{
+  content:'';width:4px;height:4px;border-radius:50%;
+  background:#1f2937;flex-shrink:0;transition:background .3s;
+}
 .mt.on{
-  background:rgba(99,102,241,.25);
+  background:rgba(99,102,241,.12);
+  border-color:rgba(99,102,241,.28);
   color:#fff;
-  border-bottom:2px solid #818cf8;
+  box-shadow:0 0 16px rgba(99,102,241,.15);
+  border-radius:10px;
+}
+.mt.on::before{
+  background:#818cf8;
+  box-shadow:0 0 6px rgba(99,102,241,.9);
 }
 .mt-pad{flex-shrink:0;width:0}
 
@@ -390,10 +403,13 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 @media(max-width:767px){
   #panel{display:none}
   #mnav{display:block}
-  #main{padding-top:120px;padding-bottom:68px}
+  /* padding-top = brand row (~56px) + tabs row (~52px) + 12px buffer */
+  /* padding-bottom = bottom action bar (~68px) + 16px safety buffer */
+  #main{padding-top:120px;padding-bottom:84px}
+  #cw{padding-bottom:0}
+  .pg{padding:24px 16px 48px}
   #m-foot{display:flex}
   #glow{display:none}
-  .pg{padding:24px 16px 40px}
   .stats{gap:8px}
   .sn{font-size:clamp(52px,16vw,96px)}
   .masonry{columns:2 120px;column-gap:8px}
@@ -403,8 +419,12 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
   #lb-media-wrap iframe,#lb-media-wrap video{height:55vh}
   .wi,.wi-lg{max-width:100%}
 }
+
+/* ── Tablet portrait & landscape (iPad Mini / Air / Pro) ── */
 @media(min-width:768px) and (max-width:1023px){
   #panel{width:200px;min-width:200px}
+  /* Stack buttons vertically so they fit the narrower panel */
+  #panel-foot{flex-direction:column}
   .pg{padding:36px 28px 48px}
 }
 @media(min-width:1024px){
@@ -414,6 +434,13 @@ button{cursor:pointer;background:none;border:none;color:inherit;padding:0}
 @media(min-width:1280px){
   #panel{width:250px;min-width:250px}
   .pg{padding:52px 72px 60px}
+}
+
+/* iPad landscape — ensure panel-foot always visible */
+@media(min-width:768px) and (max-width:1024px) and (orientation:landscape){
+  #panel{width:180px;min-width:180px}
+  #panel-foot{flex-direction:column;padding:12px 10px 16px;gap:6px}
+  .pf-btn{font-size:11px;padding:9px 10px}
 }
 </style>
 </head>
