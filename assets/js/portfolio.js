@@ -113,24 +113,54 @@ const Portfolio = (() => {
     if (typeof window.openLightbox !== 'function') return;
 
     if (item.type === 'video' && item.videoUrl) {
-      /* Build video + watermark HTML, passed as mediaHtml */
-      const wm =
-        `<img class="video-watermark" src="${WATERMARK.src}" alt=""` +
-        ` style="--wm-opacity:${WATERMARK.opacity};--wm-margin:${WATERMARK.margin}"` +
-        ` draggable="false" onerror="this.style.display='none'"/>`;
-
-      const videoHtml =
-        `<div class="lbv-wrap">` +
-        `<video src="${item.videoUrl}" controls autoplay playsinline preload="none"` +
-        ` onerror="Portfolio._onVideoError(this)"></video>` +
-        wm +
-        `</div>`;
-
+      /* Open lightbox first so the media wrap exists in the DOM */
       window.openLightbox({
-        tag:       item.category || '',
-        label:     item.title    || 'Untitled',
-        mediaHtml: videoHtml,
+        tag:   item.category || '',
+        label: item.title    || 'Untitled',
+        mediaHtml: '<div class="lbv-wrap" id="lbv-active"></div>',
       });
+
+      const wrap = document.getElementById('lbv-active');
+      if (!wrap) return;
+
+      /* Build video element in JS so we can attach loadedmetadata */
+      const video = document.createElement('video');
+      video.src         = item.videoUrl;
+      video.controls    = true;
+      video.autoplay    = true;
+      video.playsInline = true;
+      video.preload     = 'metadata';
+      video.onerror     = () => Portfolio._onVideoError(video);
+
+      /* Set volume to 10% on every open; ignore errors (some browsers block it) */
+      try { video.volume = 0.1; } catch (_) {}
+
+      /* Once dimensions are known, size the wrap to fit the viewport */
+      video.addEventListener('loadedmetadata', () => {
+        try { video.volume = 0.1; } catch (_) {}
+        _sizeWrap(wrap, video.videoWidth, video.videoHeight);
+      });
+
+      /* Watermark */
+      const wm = document.createElement('img');
+      wm.className       = 'video-watermark';
+      wm.src             = WATERMARK.src;
+      wm.alt             = '';
+      wm.draggable       = false;
+      wm.style.cssText   =
+        `--wm-opacity:${WATERMARK.opacity};--wm-margin:${WATERMARK.margin}`;
+      wm.onerror = () => { wm.style.display = 'none'; };
+
+      wrap.appendChild(video);
+      wrap.appendChild(wm);
+
+      /* Resize wrap if window is resized while modal is open */
+      function onResize() {
+        if (video.videoWidth) _sizeWrap(wrap, video.videoWidth, video.videoHeight);
+      }
+      window.addEventListener('resize', onResize);
+      /* Clean up listener when lightbox closes */
+      video.addEventListener('emptied', () => window.removeEventListener('resize', onResize));
 
     } else {
       /* Image or video-less item — show thumbnail fullscreen */
@@ -141,6 +171,20 @@ const Portfolio = (() => {
         src:   item.thumbnail || FALLBACK_THUMB,
       });
     }
+  }
+
+  /* Size .lbv-wrap to fit video's natural aspect ratio within the viewport */
+  function _sizeWrap(wrap, vw, vh) {
+    if (!vw || !vh) return;
+    const isMobile   = window.innerWidth < 768;
+    const maxW       = isMobile ? window.innerWidth        : window.innerWidth  * 0.90;
+    const maxH       = window.innerHeight * 0.90;
+    const ratio      = vw / vh;
+    let   w          = maxW;
+    let   h          = w / ratio;
+    if (h > maxH) { h = maxH; w = h * ratio; }
+    wrap.style.width  = w + 'px';
+    wrap.style.height = h + 'px';
   }
 
   /* Called via onerror on the <video> element */
